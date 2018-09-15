@@ -15,14 +15,20 @@ export default class LocationSearch extends Component {
         lng: '' };
   }
  
-  handleChange = address => {
-    this.setState({ address });
+  handleChange = val => {
+    this.setState({ 
+      address: val,
+      lat: val,
+      lng: val
+    });
   };
  
   handleSelect = address => {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.setState({  }))
+      .then(latLng => this.setState({ 
+        
+       }))
       .catch(error => console.error('Error', error));
   };
 
